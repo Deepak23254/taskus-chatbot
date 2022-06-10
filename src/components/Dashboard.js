@@ -106,7 +106,7 @@ const Dashboard = () =>{
 
         const formData = new FormData();
         formData.append(e.target.name,e.target.files[0]);
-        fetch('http://localhost:3000/fileupload', { method: 'POST', body: formData })
+        fetch(global.API_HOST+"/fileupload", { method: 'POST', body: formData })
         .then((res)=>{
             if(res.ok){
                 return res.json();
