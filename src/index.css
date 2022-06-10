@@ -1,0 +1,378 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+
+.pulse{
+  width: 60px;
+  height: 60px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(119, 179, 212);
+  text-align: center;
+  display: block;
+  box-shadow: 0 2px 32px 0 rgb(0 0 0 / 15%), 0 1px 6px 0 rgb(0 0 0 / 9%);
+  cursor: pointer;
+  animation: pulse 2s infinite ease-in-out 3s running;
+  transform: scale(1);
+  position: fixed;
+  top: 300px;
+  left: 150px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    /* box-shadow: 0 0 0 0 rgba(119, 179, 212, 0.7); */
+  }
+  
+  25%{
+    transform: scale(1);
+  }
+  
+  50%{
+    transform: scale(0.95);
+  }
+
+  75% {
+    transform: scale(1);
+    /* box-shadow: 0 0 0 10px rgba(119, 179, 212, 0); */
+  }
+  
+  100% {
+    transform: scale(0.95);
+    /* box-shadow: 0 0 0 0 rgba(119, 179, 212, 0); */
+  }
+}
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: transparent;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10px 0 0 10px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgb(92 99 105 / 50%);
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.chatbox-send-button{
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px 10px 10px 0;
+  z-index: 2;
+}
+
+/* .chatbox-input{
+  outline: transparent;
+  background-color: transparent;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-size: 16px;
+  color: #5d5d5d;
+  text-align: left;
+  line-height: 20px;
+  letter-spacing: .5px;
+  height: 43px !important;
+  resize: none;
+  padding: 20px 0;
+  border: none !important;
+  box-sizing: border-box;
+  margin-left: 10px;
+} */
+.chatbox-input:focus,
+.chatbox-input{
+  outline: transparent;
+  background-color: transparent;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-size: 16px;
+  text-align: left;
+  line-height: 20px;
+  letter-spacing: .5px;
+  height: 43px !important;
+  resize: none;
+  padding: 20px 0;
+  border: none !important;
+  box-sizing: border-box;
+  /*margin-left: 10px;*/
+  padding-left: 10px;
+}
+.chatbox-input:focus{
+  box-shadow: none;
+}
+.chatbox-menu{
+  border: none;
+  background: transparent;
+  color: rgb(119, 179, 212);
+  font-size: 20px;
+  padding: 0px;
+  cursor: pointer;
+  margin-left:10px;
+}
+
+.chatbox-layer{
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0) 0px 0px 0px 0px;
+  border-top: 2px solid rgb(216, 216, 216);
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+
+.chat-header{
+  display: block;
+  background: rgb(119, 179, 212);
+  height: 77px;
+  width: 100%;
+  z-index: 1;
+  position: static;
+}
+
+.button-image{
+  float: left;
+  top: 0px;
+  left: 2px;
+  position: relative;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+.chat-header-image{
+  float: left;
+  top: 17px;
+  left: 25px;
+  position: relative;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+
+.chat-header-content{
+  float: left;
+  border-width: 0;
+  text-align: left;
+  top: 28px;
+  left: 42px;
+  position: relative;
+  width: 60%;
+  line-height: 19px;
+  letter-spacing: .7px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  color:white;
+}
+
+.chat-header-button{
+  cursor: pointer;
+  float:right;
+  font-size: 12px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  color:white;
+  background: transparent;
+  margin-top:20px;
+}
+
+.res-product{
+  color: rgb(67, 142, 185) !important;
+}
+
+.chatbox{
+  border: 2px solid lightgray;
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+}
+
+
+.scroll{
+  background-color:#fff;
+  height:300px;
+  /*overflow-y: scroll;*/
+  overflow-x: hidden;
+  margin-left:10px;
+}
+.scroll::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+.scroll::-webkit-scrollbar{
+  width: 10px;
+  background-color: #F5F5F5;
+}
+.scroll::-webkit-scrollbar-thumb{
+  background-color: #00000033;
+}
+
+
+.chatbot-content{
+  margin-top: 15px !important;
+}
+
+.user-content{
+  margin-bottom: 10px !important;
+}
+
+.content-design{
+  position: relative;
+}
+
+.main-content,.replied-content{
+  width: auto;
+  color: #5d5d5d;
+  background: #f4f6f6;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  display: inline-block;
+  min-width: 20px;
+  line-height: 1.54;
+  letter-spacing: normal;
+  text-align: left;
+  position: relative;
+  border-radius: 32px 32px 32px 2px;
+  margin-right: 10px;
+}
+
+.replied-content{
+  border-radius: 32px 32px 32px 32px !important;
+  border: 2px solid rgb(67, 142, 185) !important;
+  background: transparent !important;
+  color: rgb(67, 142, 185) !important;
+}
+
+
+.input-panel{
+  margin:3px;
+  padding:5px;
+  /* background: orange; */
+  border-radius: 5px;
+  height: 150px;
+  /*display:inline-block;
+  position:relative;*/
+}
+
+.input-panel-title {
+  /* background-color: #1abc9c; */
+  border: none;
+  /* color: white; */
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 4px 2px;
+  width:100%;
+  border-radius: 5px;
+}
+
+.select-box,.select-box option{
+  /* background: aqua !important; */
+  border: 1px solid black;
+}
+
+.input-panel-bound{
+  border: 2px solid #777;
+}
+.copy-clipboard-text{
+  color: red;
+}
+
+
+
+
+.loading-dots{
+    width: 45px;
+    border-radius: 5px;
+    padding: 4px 60px 4px 32px;
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    float: right;
+   }
+   
+.loading-dots .dot.one{
+    -webkit-animation-delay: .2s;
+    animation-delay: .2s;
+}
+.loading-dots .dot.two{
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+}
+.loading-dots .dot.three{
+    -webkit-animation-delay: .6s;
+    animation-delay: .6s;
+}
+.loading-dots .dot{
+    display: inline;
+    position: relative;
+    opacity: 0;
+    -webkit-animation: showHideDot 2.5s ease-in-out infinite;
+    animation: showHideDot 2.5s ease-in-out infinite;
+    padding: 0 3px;
+}
+@keyframes showHideDot {
+  0%{
+  opacity:0;
+  }
+  45%{
+  opacity:.8;
+  }
+  50%{
+  opacity:1;
+  }
+  55%{
+  opacity:.8;
+  }
+  100%{
+  opacity:0;
+  }
+}

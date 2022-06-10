@@ -1,0 +1,8 @@
+export const global = {
+    API_HOST:process.env.REACT_APP_BASE_URL,
+    S3_BUCKET:process.env.REACT_APP_S3_BUCKET,
+	REGION:process.env.REACT_APP_REGION,
+	ACCESS_KEY:process.env.REACT_APP_ACCESS_KEY,
+	SECRET_KEY:process.env.REACT_APP_SECRET_ACCESS_KEY,
+	UPLOAD_DIR:process.env.REACT_APP_UPLOAD_DIR
+}
